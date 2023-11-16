@@ -29,12 +29,16 @@ linear_regression = function (X, Y) {
     p_val = c(p_val, 2 * pt(abs(t_val[i]), df = nrow(X) - ncol(X), lower.tail = FALSE))
   }
   beta_hat = t(beta_hat)
+  beta_hat = c(beta_hat)
+  col_nam =
   if (is.null(colnames(X))) {
     nmb_pred = ncol(X) - 1
-    colnames(X)[2:ncol(X)] = as.character(1:nmb_pred)
-    colnames(X)[2:ncol(X)] = paste0("x", colnames(X))
+    col_nam = 1:nmb_pred
+    col_nam = paste0("x", col_nam)
+  } else {
+    col_nam = colnames(X)
   }
-  colnames(beta_hat) = c("(Intercept)", colnames(X)[2:ncol(X)])
+  names(beta_hat) = c("(Intercept)", col_nam)
   return(list(coefficients = beta_hat, std_err = std_err_1, t_val = t_val, p_val = p_val))
 }
 
