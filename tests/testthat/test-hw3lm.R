@@ -6,4 +6,6 @@ test_that("linear_regression works", {
   std_err_lm = lm_res[ , 2]
   expect_equal(res$coefficients, lm_res[ , 1])
   expect_equal(res$std_err, std_err_lm)
+  expect_equal(res$t_val, lm_res[ , 3])
+  expect_equal(res$p_val, lm_res[ , 4])
 })
