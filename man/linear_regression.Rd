@@ -3,20 +3,21 @@
 \name{linear_regression}
 \alias{linear_regression}
 \title{linear_regression
-Get the linear regression parameters}
+Fit the linear models}
 \usage{
 linear_regression(X, Y)
 }
 \arguments{
-\item{X}{predictors values}
+\item{X}{predictors input. The X should be the predictors that you want to use to fit the model. It should be either a matrix or a dataframe.}
 
-\item{Y}{response values
-
-return the least squares estimates in matrix notation}
+\item{Y}{response values. The Y should be the response used to fit the linear model. It should be be either a matrix or a dataframe}
+}
+\value{
+It will return a list with the linear model coefficients, coefficients corresponding standard error, coefficients t values and coefficients p values
 }
 \description{
 linear_regression
-Get the linear regression parameters
+Fit the linear models
 }
 \examples{
 linear_regression(X = matrix(rnorm(3*100), nrow = 100, ncol = 3), Y = matrix(rnorm(1*100), nrow = 100, ncol = 1))

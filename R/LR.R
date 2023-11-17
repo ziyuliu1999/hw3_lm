@@ -1,11 +1,11 @@
 #'linear_regression
 #
-#'Get the linear regression parameters
+#'Fit the linear models
 #'
-#'@param X predictors values
-#'@param Y response values
+#'@param X predictors input. The X should be the predictors that you want to use to fit the model. It should be either a matrix or a dataframe.
+#'@param Y response values. The Y should be the response used to fit the linear model. It should be be either a matrix or a dataframe
 #'
-#'return the least squares estimates in matrix notation
+#'@return It will return a list with the linear model coefficients, coefficients corresponding standard error, coefficients t values and coefficients p values
 #'
 #'@examples
 #'linear_regression(X = matrix(rnorm(3*100), nrow = 100, ncol = 3), Y = matrix(rnorm(1*100), nrow = 100, ncol = 1))
@@ -36,6 +36,8 @@ linear_regression = function (X, Y) {
     nmb_pred = ncol(X) - 1
     col_nam = 1:nmb_pred
     col_nam = paste0("x", col_nam)
+  } else {
+    col_nam = colnames(X)
   }
   names(beta_hat) = c("(Intercept)", col_nam)
   names(std_err_1) = c("(Intercept)", col_nam)
