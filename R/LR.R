@@ -30,7 +30,6 @@ linear_regression = function (X, Y) {
   }
   beta_hat = t(beta_hat)
   beta_hat = c(beta_hat)
-  col_nam =
   if (is.null(colnames(X))) {
     nmb_pred = ncol(X) - 1
     col_nam = 1:nmb_pred
@@ -40,6 +39,8 @@ linear_regression = function (X, Y) {
   }
   names(beta_hat) = c("(Intercept)", col_nam)
   names(std_err_1) = c("(Intercept)", col_nam)
+  t_val = c(t(t_val))
+  names(t_val) = c("(Intercept)", col_nam)
   return(list(coefficients = beta_hat, std_err = std_err_1, t_val = t_val, p_val = p_val))
 }
 

@@ -26,7 +26,7 @@ res = linear_regression(x, y)
 ```
 
 ```{r}
-res$std_err
+res$t_val
 ```
 
 ```{r}
@@ -34,7 +34,7 @@ lm_res = lm(y ~ x)
 ```
 
 ```{r}
-summary(lm_res)$coefficients[ , 2]
+summary(lm_res)$coefficients[ , 3]
 ```
 
 
