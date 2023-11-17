@@ -12,3 +12,6 @@
 ## Overview
 
 hw3_lm is a R package created for the biostat625 homework 3. hw3_lm contains a function called `linear_regression(X, Y)`
+
+
+`linear_regression(X, Y)` is expected to get the same result of the summary(lm(Y ~ X))$coefficients. The return value is a list with four elements. The first element is the coefficient of the linear regression, which is the first column of summary(lm(Y ~ X))$coefficients.
