@@ -29,6 +29,7 @@ res = linear_regression(x, y)
 res$p_val
 ```
 
+
 ```{r}
 lm_res = lm(y ~ x)
 ```

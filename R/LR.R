@@ -16,6 +16,8 @@
 
 linear_regression = function (X, Y) {
   X = cbind(rep(1, nrow(X)), X)
+  X = as.matrix(X)
+  Y = as.matrix(Y)
   beta_hat = solve(t(X) %*% X) %*% t(X) %*% Y
   err_var = sum((X %*% beta_hat - Y)^2) / (nrow(X) - ncol(X))
   std_err = sqrt(err_var)
@@ -34,8 +36,6 @@ linear_regression = function (X, Y) {
     nmb_pred = ncol(X) - 1
     col_nam = 1:nmb_pred
     col_nam = paste0("x", col_nam)
-  } else {
-    col_nam = colnames(X)
   }
   names(beta_hat) = c("(Intercept)", col_nam)
   names(std_err_1) = c("(Intercept)", col_nam)
