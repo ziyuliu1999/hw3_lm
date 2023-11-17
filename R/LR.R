@@ -39,6 +39,7 @@ linear_regression = function (X, Y) {
     col_nam = colnames(X)
   }
   names(beta_hat) = c("(Intercept)", col_nam)
+  names(std_err_1) = c("(Intercept)", col_nam)
   return(list(coefficients = beta_hat, std_err = std_err_1, t_val = t_val, p_val = p_val))
 }
 
