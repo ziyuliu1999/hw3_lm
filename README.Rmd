@@ -49,3 +49,10 @@ res = linear_regression(x, y)
 ```
 
 We use `rnorm` to generate a $100 \times 3$ dimensional matrix as the predictors of the fitting model and generate a $100 \times 1$ dimensional matrix as the response of the fitting model. To make the code reproducible, let's set the seed to 1.
+
+Here is the return of te `linear_regression` model. The first column is the coefficients estimate, the second column is the standard error of the corresponding coefficients, the third column is the t value of the corresponding coefficients, and the fourth column is the P-value of the coefficients. A same perfomance can be achieved via using the `summary(lm(y ~ x))$coefficients`
+
+```{r}
+res
+```
+
