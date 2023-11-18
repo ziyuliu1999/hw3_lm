@@ -19,16 +19,7 @@ library(hw3lm)
 library(Rcpp)
 ```
 
-```{r}
-cppFunction('
-float sum_cpp(const std::vector<float> numbers) {
-  float sum = 0;
-  for (float number : numbers) {
-    sum += number;
-  }
-  return(sum);
-}')
-```
+
 
 
 ```{r}
@@ -100,3 +91,39 @@ Our function's total time is 4ms slower than the built int R-package.
 ```{r}
 print(bench::mark(our_code = linear_regression(x_real, y_real), lm_code = summary(lm(mpg ~ disp + hp + drat + wt + qsec, data = mtcars))$coefficients))
 ```
+
+Here we will see whether a Rcpp function will enhance the code efficiency.
+
+We firstly create a Rcpp function called `sum_cpp` which used a list of float as the input and a float number as the output. It will calculate the sum of the input list, which we will expect to be same with `sum_func` in the package
+
+```{r}
+cppFunction('
+float sum_cpp(const std::vector<float> numbers) {
+  float sum = 0;
+  for (float number : numbers) {
+    sum += number;
+  }
+  return(sum);
+}')
+```
+
+Here we can see R `sum_func` has the same result with the R original package and RCpp `sum_cpp` function.
+
+```{r}
+all.equal(sum_func(1:10), sum(1:10))
+all.equal(sum_func(1:10), sum_cpp(1:10))
+```
+
+R function `sum_func` has a more efficient performance than the Rcpp `sum_cpp` function
+
+```{r}
+print(bench::mark(rsum = sum_func(1:10), csum = sum_cpp(1:10)))
+```
+
+R function `sum_func` has a less efficient performance than original R package `sum`
+
+```{r}
+print(bench::mark(rsum = sum_func(1:10), osum = sum(1:10)))
+```
+
+

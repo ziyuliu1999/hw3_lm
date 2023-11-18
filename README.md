@@ -17,7 +17,19 @@ coverage](https://codecov.io/gh/ziyuliu1999/hw3_lm/branch/main/graph/badge.svg)]
 ## Overview
 
 hw3_lm is a R package created for the biostat625 homework 3. hw3_lm
-contains a function called `linear_regression(X, Y)`
+contain two function which are `linear_regression(X, Y)` and
+`sum_func(numbs)`
+
+`linear_regression(X, Y)` is a function that fit in a linear model with
+matrix/dataframe Y as the response and matrix/dataframe X as the
+predictor. The return is expected to get the same result with the
+`summary(lm(Y ~ X))$coefficients`. The return value is a table with four
+columns. The first column is the coefficients estimate, corresponding
+standard error,t values and p values.
+
+`sum_func(numbs)` is a function that will calculate the sum of the
+number element in the list. The return is expected to get the same
+result with `sum(numbs)`. The return will be a number.
 
 ## Installation
 
@@ -31,7 +43,8 @@ devtools::install_github("ziyuliu1999/hw3_lm")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to solve a common problem
+using `linear_regression` function in the package:
 
 ``` r
 library(hw3lm)
@@ -51,7 +64,8 @@ the coefficients estimate, the second column is the standard error of
 the corresponding coefficients, the third column is the t value of the
 corresponding coefficients, and the fourth column is the P-value of the
 coefficients. A same perfomance can be achieved via using the
-`summary(lm(y ~ x))$coefficients`
+`summary(lm(y ~ x))$coefficients`. It is mainly used to compare the code
+efficiency with the Rcpp.
 
 ``` r
 res
@@ -60,4 +74,12 @@ res
 #> x1          -0.05795886 0.11169312 -0.5189116 0.6050165
 #> x2          -0.05494186 0.10484521 -0.5240283 0.6014667
 #> x3           0.10462312 0.09711815  1.0772767 0.2840563
+```
+
+This is a basic example which shows you how to solve a common problem
+using `sum_func` function in the package:
+
+``` r
+sum_func(1:10)
+#> [1] 55
 ```
