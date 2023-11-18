@@ -14,7 +14,7 @@
 #'
 
 
-function (X, Y) {
+linear_regression = function (X, Y) {
   # Transform possible dataframe to matrix
   X = cbind(rep(1, nrow(X)), X)
   X = as.matrix(X)
@@ -43,7 +43,7 @@ function (X, Y) {
     col_nam = 1:nmb_pred
     col_nam = paste0("x", col_nam)
   } else {
-    col_nam = colnames(X)[2:length(colnames(X))]
+    col_nam = colnames(X)[2:ncol(X)]
   }
   names(beta_hat) = c("(Intercept)", col_nam)
   names(std_err_1) = c("(Intercept)", col_nam)
@@ -55,7 +55,6 @@ function (X, Y) {
   colnames(tble) = c("Estimate", "Std. Error", "t value", "Pr(>|t|)")
   return(tble = tble)
 }
-
 
 
 
