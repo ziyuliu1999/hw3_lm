@@ -22,3 +22,6 @@ hw3_lm is a R package created for the biostat625 homework 3. hw3_lm contains a f
 # install.packages("devtools")
 devtools::install_github("ziyuliu1999/hw3_lm")
 ```
+
+## Useage
+

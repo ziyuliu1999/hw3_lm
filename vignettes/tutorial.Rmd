@@ -25,9 +25,6 @@ y = matrix(rnorm(1*100), nrow = 100, ncol = 1)
 res = linear_regression(x, y)
 ```
 
-```{r}
-res$p_val
-```
 
 
 ```{r}
@@ -35,7 +32,9 @@ lm_res = lm(y ~ x)
 ```
 
 ```{r}
-summary(lm_res)$coefficients[ , 3]
+summary(lm_res)$coefficients
 ```
+
+
 
 
