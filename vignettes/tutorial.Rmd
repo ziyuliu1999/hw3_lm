@@ -26,15 +26,19 @@ res = linear_regression(x, y)
 ```
 
 
-
 ```{r}
 lm_res = lm(y ~ x)
 ```
 
 ```{r}
-summary(lm_res)$coefficients
+sum_res = summary(lm_res)$coefficients
 ```
 
+```{r}
+all.equal(res, sum_res)
+```
 
-
+```{r}
+bench::mark(linear_regression(x, y), summary(lm(y ~ x))$coefficients)
+```
 
