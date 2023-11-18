@@ -110,8 +110,8 @@ float sum_cpp(const std::vector<float> numbers) {
 Here we can see R `sum_func` has the same result with the R original package and RCpp `sum_cpp` function.
 
 ```{r}
-all.equal(sum_func(1:10), sum(1:10))
-all.equal(sum_func(1:10), sum_cpp(1:10))
+print(all.equal(sum_func(1:10), sum(1:10)))
+print(all.equal(sum_func(1:10), sum_cpp(1:10)))
 ```
 
 R function `sum_func` has a more efficient performance than the Rcpp `sum_cpp` function
