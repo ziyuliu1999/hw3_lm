@@ -57,5 +57,25 @@ linear_regression = function (X, Y) {
 }
 
 
+#'sum_func
+#
+#'A function to sum up the list of number
+#'
+#'@param numbs numbs is a list of numbers which will be summed up in the function
+#
+#'
+#'@return It will return a number which is the sum up of the input
+#'
+#'@examples
+#'sum_func(1:10)
+#'
+#' @export
+#'
 
-
+sum_func = function(numbs) {
+  res = 0
+  for(n in numbs) {
+    res = res + n
+  }
+  return(res)
+}

@@ -3,7 +3,7 @@
 \name{linear_regression}
 \alias{linear_regression}
 \title{linear_regression
-Fit the linear models}
+Fit the linear models and return the coefficients estimation information}
 \usage{
 linear_regression(X, Y)
 }
@@ -17,7 +17,7 @@ It will return a table with the linear model coefficients estimates, correspondi
 }
 \description{
 linear_regression
-Fit the linear models
+Fit the linear models and return the coefficients estimation information
 }
 \examples{
 linear_regression(X = matrix(rnorm(3*100), nrow = 100, ncol = 3), Y = matrix(rnorm(1*100), nrow = 100, ncol = 1))
