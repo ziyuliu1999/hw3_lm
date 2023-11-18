@@ -13,7 +13,7 @@ linear_regression(X, Y)
 \item{Y}{response values. The Y should be the response used to fit the linear model. It should be be either a matrix or a dataframe}
 }
 \value{
-It will return a table with the linear model coefficients estimates, corresponding standard error,t values and p values, which should return the same result with the summary(lm)$coefficients
+The return value is a table with four columns. The first column is the coefficients estimate,  the second columns is the coefficients corresponding standard error, the third columns is the coefficients corresponding t values and the fourth column is the coefficient corresponding p values.
 }
 \description{
 linear_regression

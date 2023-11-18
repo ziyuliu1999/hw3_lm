@@ -5,7 +5,7 @@
 #'@param X predictors input. The X should be the predictors that you want to use to fit the model. It should be either a matrix or a dataframe.
 #'@param Y response values. The Y should be the response used to fit the linear model. It should be be either a matrix or a dataframe
 #'
-#'@return It will return a table with the linear model coefficients estimates, corresponding standard error,t values and p values, which should return the same result with the summary(lm)$coefficients
+#'@return The return value is a table with four columns. The first column is the coefficients estimate,  the second columns is the coefficients corresponding standard error, the third columns is the coefficients corresponding t values and the fourth column is the coefficient corresponding p values.
 #'
 #'@examples
 #'linear_regression(X = matrix(rnorm(3*100), nrow = 100, ncol = 3), Y = matrix(rnorm(1*100), nrow = 100, ncol = 1))
