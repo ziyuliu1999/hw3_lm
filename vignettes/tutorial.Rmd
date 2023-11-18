@@ -70,3 +70,9 @@ res = linear_regression(x_real, y_real)
 summary(lm(mpg ~ disp + hp + drat + wt + qsec, data = mtcars))$coefficients
 ```
 
+
+
+```{r}
+try_func(x_real, y_real)
+```
+
