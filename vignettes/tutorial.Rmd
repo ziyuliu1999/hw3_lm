@@ -60,11 +60,13 @@ bench::mark(our_code = linear_regression(x, y), lm_code = summary(lm(y ~ x))$coe
 ```
 
 ```{r}
-# data("mtcars")
-# x_real = mtcars[, c(3, 4, 5, 6, 7)]
-# y_real = mtcars[, 1]
-# res = linear_regression(x_real, y_real)
+data("mtcars")
+x_real = mtcars[, c(3, 4, 5, 6, 7)]
+y_real = mtcars[, 1]
+res = linear_regression(x_real, y_real)
 ```
 
-
+```{r}
+summary(lm(mpg ~ disp + hp + drat + wt + qsec, data = mtcars))$coefficients
+```
 

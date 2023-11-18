@@ -14,7 +14,7 @@
 #'
 
 
-linear_regression = function (X, Y) {
+function (X, Y) {
   # Transform possible dataframe to matrix
   X = cbind(rep(1, nrow(X)), X)
   X = as.matrix(X)
@@ -55,6 +55,7 @@ linear_regression = function (X, Y) {
   colnames(tble) = c("Estimate", "Std. Error", "t value", "Pr(>|t|)")
   return(tble = tble)
 }
+
 
 
 
