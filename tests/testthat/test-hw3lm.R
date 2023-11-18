@@ -10,4 +10,5 @@ test_that("linear_regression works", {
   res_real = linear_regression(x_real, y_real)
   lm_res_real = summary(lm(mpg ~ disp + hp + drat + wt + qsec, data = mtcars))$coefficients
   expect_equal(res_real, lm_res_real)
+  expect_equal(sum_func(1:10), sum(1:10))
 })
