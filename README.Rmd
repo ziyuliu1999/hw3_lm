@@ -68,4 +68,4 @@ sum_func(1:10)
 ```
 
 
-We used the list number `1, 2, ...10` as a example used in the `sum_func`.  
+We used the list number `1, 2, ...10` as a example input used in the `sum_func`.  

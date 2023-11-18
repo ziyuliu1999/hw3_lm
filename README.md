@@ -85,5 +85,5 @@ sum_func(1:10)
 #> [1] 55
 ```
 
-We used the list number `1, 2, ...10` as a example used in the
+We used the list number `1, 2, ...10` as a example input used in the
 `sum_func`.
