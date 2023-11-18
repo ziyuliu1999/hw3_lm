@@ -1,27 +1,63 @@
-# hw3_lm
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# hw3lm
 
 <!-- badges: start -->
+
 [![R-CMD-check](https://github.com/ziyuliu1999/hw3_lm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ziyuliu1999/hw3_lm/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 <!-- badges: start -->
-  [![Codecov test coverage](https://codecov.io/gh/ziyuliu1999/hw3_lm/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ziyuliu1999/hw3_lm?branch=main)
-  <!-- badges: end -->
 
+[![Codecov test
+coverage](https://codecov.io/gh/ziyuliu1999/hw3_lm/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ziyuliu1999/hw3_lm?branch=main)
+<!-- badges: end -->
 
 ## Overview
 
-hw3_lm is a R package created for the biostat625 homework 3. hw3_lm contains a function called `linear_regression(X, Y)`
-
-
-`linear_regression(X, Y)` is expected to get the same result of the summary(lm(Y ~ X))$coefficients. The return value is a list with four elements. The first element is the coefficient of the linear regression, which is the first column of summary(lm(Y ~ X))$coefficients. The second element is the standard error of the corresponding coefficients, which is the second column of summary(lm(Y ~ X))$coefficients. The third element is the t value of the corresponding coefficients, which is the thir column of summary(lm(Y ~ X))$coefficients. The fourth element is the p value of the corresponding coefficient, which is the fourth column of summary(lm(Y ~ X))$coefficients.
+hw3_lm is a R package created for the biostat625 homework 3. hw3_lm
+contains a function called `linear_regression(X, Y)`
 
 ## Installation
+
+You can install the development version of hw3lm from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("ziyuliu1999/hw3_lm")
 ```
 
-## Useage
+## Example
 
+This is a basic example which shows you how to solve a common problem:
+
+``` r
+library(hw3lm)
+## basic example code
+```
+
+What is special about using `README.Rmd` instead of just `README.md`?
+You can include R chunks like so:
+
+``` r
+summary(cars)
+#>      speed           dist       
+#>  Min.   : 4.0   Min.   :  2.00  
+#>  1st Qu.:12.0   1st Qu.: 26.00  
+#>  Median :15.0   Median : 36.00  
+#>  Mean   :15.4   Mean   : 42.98  
+#>  3rd Qu.:19.0   3rd Qu.: 56.00  
+#>  Max.   :25.0   Max.   :120.00
+```
+
+You’ll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date. `devtools::build_readme()` is handy for this.
+
+You can also embed plots, for example:
+
+<img src="man/figures/README-pressure-1.png" width="100%" />
+
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub and CRAN.
