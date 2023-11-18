@@ -10,7 +10,6 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
 )
 ```
 
@@ -53,7 +52,7 @@ Here we can see the our result is same as the `summary(lm(y ~ x))$coefficients`,
 all.equal(res, sum_res)
 ```
 
-Here we can see that our code in total spend 469 ms and the original R package used 454 ms, which implies that our code is a little bit slower than the R original package.
+Here we can see that our code in total spend 469 ms and the original R package used 454 ms, which implies that our code is a little bit slower than the R original Package.
 
 ```{r}
 bench::mark(our_code = linear_regression(x, y), lm_code = summary(lm(y ~ x))$coefficients)
