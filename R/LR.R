@@ -13,7 +13,7 @@
 #' @export
 #'
 
-# Here is the linear_regression function
+
 linear_regression = function (X, Y) {
   # Transform possible dataframe to matrix
   X = cbind(rep(1, nrow(X)), X)

@@ -25,6 +25,7 @@ y = matrix(rnorm(1*100), nrow = 100, ncol = 1)
 res = linear_regression(x, y)
 ```
 
+We generated data using the `rnorm` function. X is a $100 \times 3$ dimensional matrix. In other words, we are gonna fit the model with three predictors. Y is a $100 \times 1$ dimensional matrix. 
 
 ```{r}
 lm_res = lm(y ~ x)
@@ -34,11 +35,27 @@ lm_res = lm(y ~ x)
 sum_res = summary(lm_res)$coefficients
 ```
 
+Here is the result generated from `summary(lm(y ~ x))$coefficients`
+
+```{r}
+sum_res
+```
+
+Here is the result generated from our `linear_regression` code
+
+```{r}
+res
+```
+
+Here we can see the our result is same as the `summary(lm(y ~ x))$coefficients`, which is what we expected.
+
 ```{r}
 all.equal(res, sum_res)
 ```
 
+Here we can see that our code in total spend 469 ms and the original R package used 454 ms, which implies that our code is a little bit slower than the R original package.
+
 ```{r}
-bench::mark(linear_regression(x, y), summary(lm(y ~ x))$coefficients)
+bench::mark(our_code = linear_regression(x, y), lm_code = summary(lm(y ~ x))$coefficients)
 ```
 
