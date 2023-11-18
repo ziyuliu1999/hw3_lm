@@ -59,3 +59,12 @@ Here we can see that our code in total spend 469 ms and the original R package u
 bench::mark(our_code = linear_regression(x, y), lm_code = summary(lm(y ~ x))$coefficients)
 ```
 
+```{r}
+# data("mtcars")
+# x_real = mtcars[, c(3, 4, 5, 6, 7)]
+# y_real = mtcars[, 1]
+# res = linear_regression(x_real, y_real)
+```
+
+
+

@@ -43,7 +43,7 @@ linear_regression = function (X, Y) {
     col_nam = 1:nmb_pred
     col_nam = paste0("x", col_nam)
   } else {
-    col_nam = colnames(X)
+    col_nam = colnames(X)[2:length(colnames(X))]
   }
   names(beta_hat) = c("(Intercept)", col_nam)
   names(std_err_1) = c("(Intercept)", col_nam)
