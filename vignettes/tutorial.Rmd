@@ -57,6 +57,6 @@ all.equal(res, sum_res)
 Here we can see that our code in total spend 469 ms and the original R package used 454 ms, which implies that our code is a little bit slower than the R original 
 
 ```{r}
-bench::mark(our_code = linear_regression(x, y), lm_code = summary(lm(y ~ x))$coefficients)
+# bench::mark(our_code = linear_regression(x, y), lm_code = summary(lm(y ~ x))$coefficients)
 ```
 
