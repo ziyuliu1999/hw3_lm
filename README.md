@@ -24,8 +24,10 @@ contain two function which are `linear_regression(X, Y)` and
 matrix/dataframe Y as the response and matrix/dataframe X as the
 predictor. The return is expected to get the same result with the
 `summary(lm(Y ~ X))$coefficients`. The return value is a table with four
-columns. The first column is the coefficients estimate, corresponding
-standard error,t values and p values.
+columns. The first column is the coefficients estimate, the second
+columns is the coefficients corresponding standard error, the third
+columns is the coefficients corresponding t values and the fourth column
+is the coefficient corresponding p values.
 
 `sum_func(numbs)` is a function that will calculate the sum of the
 number element in the list. The return is expected to get the same
