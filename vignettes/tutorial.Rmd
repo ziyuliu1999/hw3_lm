@@ -16,7 +16,20 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(hw3lm)
+library(Rcpp)
 ```
+
+```{r}
+cppFunction('
+float sum_cpp(const std::vector<float> numbers) {
+  float sum = 0;
+  for (float number : numbers) {
+    sum += number;
+  }
+  return(sum);
+}')
+```
+
 
 ```{r}
 set.seed(1)
@@ -59,15 +72,31 @@ Here we can see that our code in total spend 469 ms and the original R package u
 bench::mark(our_code = linear_regression(x, y), lm_code = summary(lm(y ~ x))$coefficients)
 ```
 
+We used the built-in data mtcars to test our model. With mpg as the response, disp, hp, drat, wt, and qsec are the predictors. 
+
+We fit our model first.
+
 ```{r}
 data("mtcars")
 x_real = mtcars[, c(3, 4, 5, 6, 7)]
 y_real = mtcars[, 1]
-res = linear_regression(x_real, y_real)
+res_real = linear_regression(x_real, y_real)
 ```
+
+Then we use the lm function to fit in the model.
 
 ```{r}
-summary(lm(mpg ~ disp + hp + drat + wt + qsec, data = mtcars))$coefficients
+lm_real = summary(lm(mpg ~ disp + hp + drat + wt + qsec, data = mtcars))$coefficients
 ```
 
 
+
+```{r}
+all.equal(lm_real, res_real)
+```
+
+Our function's total time is 4ms slower than the built int R-package.
+
+```{r}
+bench::mark(our_code = linear_regression(x_real, y_real), lm_code = summary(lm(mpg ~ disp + hp + drat + wt + qsec, data = mtcars))$coefficients)
+```
