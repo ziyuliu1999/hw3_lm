@@ -1,6 +1,6 @@
 #'linear_regression
 #
-#'Fit the linear models
+#'Fit the linear models and return the coefficients estimation information
 #'
 #'@param X predictors input. The X should be the predictors that you want to use to fit the model. It should be either a matrix or a dataframe.
 #'@param Y response values. The Y should be the response used to fit the linear model. It should be be either a matrix or a dataframe
